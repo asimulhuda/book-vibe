@@ -4,24 +4,29 @@ import Home from "../pages/Home";
 import PageToRead from "../pages/PageToRead";
 import ErrorPage from "../pages/ErrorPage";
 import ListedBooks from "../pages/ListedBooks";
+import BookDetails from "../pages/BookDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/listedbooks",
-        element: <ListedBooks></ListedBooks>,
+        element: <ListedBooks />,
       },
       {
         path: "/pagetoread",
-        element: <PageToRead></PageToRead>,
+        element: <PageToRead />,
+      },
+      {
+        path: "/book-details/:id",
+        element: <BookDetails />,
       },
     ],
   },
