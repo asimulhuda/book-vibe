@@ -33,5 +33,5 @@ This repository contains a Book Catalog Website built with HTML, Tailwind CSS, J
 
 ### Contributors
 
-- Asimul Huds - [devasimulhuda@gmail.com](https://github.com/asimulhuda)
+- Asimul Huda - [devasimulhuda@gmail.com](https://github.com/asimulhuda)
 
