@@ -2,11 +2,18 @@ import { useParams } from "react-router-dom";
 import UseBooksData from "../hooks/UseBooksData";
 import { useEffect, useState } from "react";
 import { Button } from "@material-tailwind/react";
+import { saveToLocalStorage } from "../utils/localStorage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BookDetails = () => {
   const [singleData, setSingleData] = useState({});
   const { id } = useParams();
   const { data, loading } = UseBooksData();
+
+  const handleReadBooks = () => {
+    saveToLocalStorage(singleData);
+  };
 
   useEffect(() => {
     const singleData = data.find((item) => item.id == id);
@@ -76,7 +83,7 @@ const BookDetails = () => {
           </table>
         </div>
         <div className="flex gap-4">
-          <Button size="lg" variant="outlined">
+          <Button onClick={handleReadBooks} size="lg" variant="outlined">
             <span>Read</span>
           </Button>
           <Button size="lg" className="bg-[#50B1C9]">
@@ -84,6 +91,7 @@ const BookDetails = () => {
           </Button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
