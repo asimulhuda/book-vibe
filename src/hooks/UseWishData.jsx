@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getFromLocalStorage } from "../utils/localStorage";
 import { getWishCardFromLocalStorage } from "../utils/wishListStorage";
 
 const UseWishData = () => {
