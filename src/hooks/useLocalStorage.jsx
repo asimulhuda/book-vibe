@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { getFromLocalStorage } from "../utils/localStorage";
+import { getWishCardFromLocalStorage } from "../utils/wishListStorage";
 
 const useLocalStorage = () => {
   const [localData, setLocalData] = useState([]);
   useEffect(() => {
-    setLocalData(getFromLocalStorage());
+    setLocalData(getWishCardFromLocalStorage());
   }, []);
   return { localData };
 };

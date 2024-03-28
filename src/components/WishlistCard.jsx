@@ -3,8 +3,7 @@ import { GoPeople } from "react-icons/go";
 import { MdOutlineInsertPageBreak } from "react-icons/md";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
-const ReadBookCard = ({ readBook }) => {
+const WishlistCard = ({ WishCard }) => {
   const {
     id,
     bookName,
@@ -16,7 +15,7 @@ const ReadBookCard = ({ readBook }) => {
     totalPages,
     publisher,
     yearOfPublishing,
-  } = readBook || {};
+  } = WishCard || {};
   return (
     <div className="p-6 border-[1px] border-[#13131326] rounded-2xl lg:flex md:flex gap-6 space-y-6">
       <div className="py-[30px] px-12 rounded-2xl bg-[#1313130D] flex justify-center">
@@ -66,8 +65,8 @@ const ReadBookCard = ({ readBook }) => {
   );
 };
 
-ReadBookCard.propTypes = {
-  readBook: PropTypes.object,
+WishlistCard.propTypes = {
+  WishCard: PropTypes.object,
 };
 
-export default ReadBookCard;
+export default WishlistCard;

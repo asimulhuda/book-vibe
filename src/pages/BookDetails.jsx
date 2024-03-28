@@ -5,14 +5,19 @@ import { Button } from "@material-tailwind/react";
 import { saveToLocalStorage } from "../utils/localStorage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { saveWishCardToLocalStorage } from "../utils/wishListStorage";
 
 const BookDetails = () => {
   const [singleData, setSingleData] = useState({});
+
   const { id } = useParams();
   const { data, loading } = UseBooksData();
 
   const handleReadBooks = () => {
     saveToLocalStorage(singleData);
+  };
+  const handleWishList = () => {
+    saveWishCardToLocalStorage(singleData);
   };
 
   useEffect(() => {
@@ -86,7 +91,7 @@ const BookDetails = () => {
           <Button onClick={handleReadBooks} size="lg" variant="outlined">
             <span>Read</span>
           </Button>
-          <Button size="lg" className="bg-[#50B1C9]">
+          <Button onClick={handleWishList} size="lg" className="bg-[#50B1C9]">
             <span>Wishlist</span>
           </Button>
         </div>
